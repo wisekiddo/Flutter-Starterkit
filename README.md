@@ -1,6 +1,11 @@
-# flutter_starterkit
+# Flutter Starter Kit
 
 Flutter Starterkit
+
+- Splash Screen
+- No Debug Banner
+- Launcher Icon/ App Icon
+
 
 ## Getting Started
 

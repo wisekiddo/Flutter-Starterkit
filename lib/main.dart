@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_starterkit/widgets/UserWidget.dart';
+
+import 'blocs/MovieListBloc.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,7 +24,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Toolbone'),
     );
   }
 }
@@ -47,6 +50,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
+  @override void initState() {
+    // TODO: implement initState
+    super.initState();
+
+  }
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -56,6 +64,15 @@ class _MyHomePageState extends State<MyHomePage> {
       // called again, and so nothing would appear to happen.
       _counter++;
     });
+  }
+
+  navigateToMovieDetail(BuildContext context, int movieId) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => UserWidget(),
+      ),
+    );
   }
 
   @override
@@ -92,9 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
+            UserWidget(),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.display1,
